@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".june14patterns.BasicFormActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLayoutName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="50dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_first_name"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutName"
+        app:layout_constraintStart_toStartOf="@+id/txtLayoutName"
+        app:layout_constraintEnd_toEndOf="@+id/txtLayoutName"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:id="@+id/txtLayoutLastName"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_last_name"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutLastName"
+        app:layout_constraintStart_toStartOf="@+id/txtLayoutLastName"
+        app:layout_constraintEnd_toEndOf="@+id/txtLayoutLastName"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:id="@+id/txtLayoutMobile"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtMobile"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_mobile"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutMobile"
+        app:layout_constraintStart_toStartOf="@+id/txtLayoutMobile"
+        app:layout_constraintEnd_toEndOf="@+id/txtLayoutMobile"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:id="@+id/txtLayoutEmail"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_email"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLayoutAge"
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutEmail"
+        app:layout_constraintStart_toStartOf="@+id/txtLayoutEmail"
+        app:layout_constraintEnd_toEndOf="@+id/txtLayoutEmail"
+        android:layout_marginTop="10dp"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_calendar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/zero"
+            android:inputType="number"
+            android:hint="@string/enter_age"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtGender"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:text="@string/gender"
+        app:layout_constraintTop_toBottomOf="@id/txtLayoutAge"
+        app:layout_constraintStart_toStartOf="@id/txtLayoutAge"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/txtLayoutAge"
+        app:layout_constraintStart_toEndOf="@id/txtGender"
+        app:layout_constraintTop_toTopOf="@id/txtGender"
+        app:layout_constraintBottom_toBottomOf="@id/txtGender">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioBtnMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:textSize="18sp"
+            android:text="@string/male" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioBtnFemale"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:text="@string/female" />
+
+
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSubmit"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintStart_toStartOf="@id/txtGender"
+        android:text="@string/submit"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/radioGroup"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

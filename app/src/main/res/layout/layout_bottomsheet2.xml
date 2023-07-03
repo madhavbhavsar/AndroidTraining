@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5"
+
+        />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtDoctorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dr_marcus"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtDoctorDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/general_physician"
+        app:layout_constraintStart_toStartOf="@id/txtDoctorName"
+        app:layout_constraintTop_toBottomOf="@id/txtDoctorName" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgDrProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="@id/txtDoctorDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtDoctorName"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    <View
+        android:id="@+id/imgGrayLine1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey_white"
+        app:layout_constraintStart_toStartOf="@id/txtDate"
+        app:layout_constraintTop_toBottomOf="@id/txtDoctorDesc" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgCalender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintStart_toStartOf="@id/txtDoctorDesc"
+        app:layout_constraintTop_toBottomOf="@id/imgGrayLine1" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/date"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgCalender"
+        app:layout_constraintEnd_toStartOf="@+id/gl1"
+        app:layout_constraintStart_toEndOf="@id/imgCalender"
+        app:layout_constraintTop_toTopOf="@id/imgCalender" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_clock"
+        app:layout_constraintBottom_toBottomOf="@id/imgCalender"
+        app:layout_constraintStart_toStartOf="@id/gl1"
+        app:layout_constraintTop_toTopOf="@id/imgCalender" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/time"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgClock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgClock"
+        app:layout_constraintTop_toTopOf="@id/imgClock" />
+
+    <View
+        android:id="@+id/imgGrayLine2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey_white"
+        app:layout_constraintStart_toStartOf="@id/imgCalender"
+        app:layout_constraintTop_toBottomOf="@id/imgCalender" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_home"
+        app:layout_constraintStart_toStartOf="@id/imgCalender"
+        app:layout_constraintTop_toBottomOf="@id/imgGrayLine2" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtVisit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:text="@string/home_visit"
+        app:layout_constraintBottom_toBottomOf="@id/imgHome"
+        app:layout_constraintStart_toEndOf="@id/imgHome"
+        app:layout_constraintTop_toTopOf="@id/imgHome" />
+
+
+    <View
+        android:id="@+id/imgGrayLine3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey_white"
+        app:layout_constraintStart_toStartOf="@id/imgHome"
+        app:layout_constraintTop_toBottomOf="@id/imgHome" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_file"
+        app:layout_constraintStart_toStartOf="@id/imgHome"
+        app:layout_constraintTop_toBottomOf="@id/imgGrayLine3" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txtFileDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:text="@string/file_desc"
+        app:layout_constraintBottom_toBottomOf="@id/imgFile"
+        app:layout_constraintStart_toEndOf="@id/imgFile"
+        app:layout_constraintTop_toTopOf="@id/imgFile" />
+
+
+    <View
+        android:id="@+id/imgGrayLine4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey_white"
+        app:layout_constraintStart_toStartOf="@id/imgFile"
+        app:layout_constraintTop_toBottomOf="@id/imgFile" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/btnstyle_edit"
+        android:text="@string/edit"
+        android:textColor="@color/light_green2"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toStartOf="@+id/gl1"
+        app:layout_constraintStart_toStartOf="@id/imgFile"
+        app:layout_constraintTop_toTopOf="@id/imgGrayLine4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/btnstyle_cancel"
+        android:text="@string/cancel"
+        android:textColor="@color/light_red2"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@id/btnEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl1"
+        app:layout_constraintTop_toTopOf="@id/btnEdit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

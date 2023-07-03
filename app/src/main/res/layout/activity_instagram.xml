@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_lock"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_lock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/txt_user_name"
+            android:textSize="15sp"
+
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ic_lock"
+            app:layout_constraintStart_toEndOf="@+id/ic_lock"
+            app:layout_constraintTop_toTopOf="@id/ic_lock" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_arrow_down"
+            app:layout_constraintBottom_toBottomOf="@id/txt_user_name"
+            app:layout_constraintStart_toEndOf="@+id/txt_user_name"
+            app:layout_constraintTop_toTopOf="@id/txt_user_name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_menu"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_add_box"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_menu"
+            app:layout_constraintEnd_toStartOf="@id/ic_menu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+
+
+            android:id="@+id/ic_user_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="250dp"
+            app:layout_constraintEnd_toEndOf="@+id/txt_user_name_2"
+            app:layout_constraintStart_toStartOf="@id/txt_user_name_2"
+            app:layout_constraintTop_toBottomOf="@id/ic_lock">
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="250dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/download" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_user_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_user_name_2"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_user_pic" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_posts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/ic_user_pic"
+            app:layout_constraintEnd_toStartOf="@id/cl_followers"
+            app:layout_constraintStart_toEndOf="@id/ic_user_pic"
+            app:layout_constraintTop_toTopOf="@id/ic_user_pic">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_post_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/random_number"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cl_posts" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_posts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/posts"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_post_no" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/cl_posts"
+            app:layout_constraintEnd_toStartOf="@+id/cl_following"
+            app:layout_constraintStart_toEndOf="@id/cl_posts"
+            app:layout_constraintTop_toTopOf="@id/cl_posts">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_followers_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/random_number"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cl_followers" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_followers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/followers"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_followers_no" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/cl_followers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cl_followers"
+            app:layout_constraintTop_toTopOf="@id/cl_followers">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_following_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/random_number"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cl_following" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_followings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/followings"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_following_no" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_edit_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/grey_white"
+            android:text="@string/edit_profile"
+            android:textColor="@color/black"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_share_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_user_name_2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_share_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/grey_white"
+            android:text="@string/share_profile"
+            android:textColor="@color/black"
+            app:cornerRadius="15dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_img_add"
+            app:layout_constraintStart_toEndOf="@id/btn_edit_profile"
+            app:layout_constraintTop_toTopOf="@id/btn_edit_profile" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_img_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_person_add"
+            app:layout_constraintBottom_toBottomOf="@id/btn_share_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_share_profile"
+            app:layout_constraintTop_toTopOf="@id/btn_share_profile" />
+
+
+
+
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_1"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_1"-->
+        <!--            -->
+        <!--            app:layout_constraintEnd_toStartOf="@id/img_2"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/ic_grid" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_2"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_2"-->
+        <!--            -->
+        <!--            app:layout_constraintEnd_toStartOf="@id/img_3"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/img_1"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/img_1" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_3"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_3"-->
+        <!--            -->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/img_2"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/img_1" />-->
+
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_4"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_marginTop="5dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_4"-->
+        <!--            -->
+        <!--            app:layout_constraintEnd_toEndOf="@id/img_1"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/img_1"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/img_1" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_5"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_5"-->
+        <!--            app:layout_constraintDimensionRatio="1:1"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/img_6"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/img_4"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/img_4" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_6"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_6"-->
+        <!--            app:layout_constraintDimensionRatio="1:1"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/img_5"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/img_5" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_7"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_marginTop="5dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_7"-->
+        <!--            app:layout_constraintEnd_toEndOf="@id/img_4"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/img_4"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/img_4" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_8"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_8"-->
+        <!--            app:layout_constraintDimensionRatio="1:1"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/img_9"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/img_7"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/img_7" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_9"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_9"-->
+        <!--            app:layout_constraintDimensionRatio="1:1"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/img_8"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/img_8" />-->
+
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_10"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_1"-->
+        <!--            app:layout_constraintDimensionRatio="1:1"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/img_2"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/img_7" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_11"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_2"-->
+        <!--            app:layout_constraintDimensionRatio="1:1"-->
+        <!--            app:layout_constraintEnd_toStartOf="@id/img_12"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/img_10"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/img_10" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/img_12"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="120dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/img_3"-->
+        <!--            app:layout_constraintDimensionRatio="1:1"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHeight_percent="0.33"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/img_11"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/img_10" />-->
+
+
+        <!--       <GridLayout-->
+        <!--           android:id="@+id/gl_images"-->
+        <!--           android:layout_width="0dp"-->
+        <!--           android:layout_height="wrap_content"-->
+        <!--           android:rowCount="1"-->
+        <!--           android:columnCount="3"-->
+        <!--           app:layout_constraintTop_toBottomOf="@id/ic_grid"-->
+        <!--           app:layout_constraintStart_toStartOf="parent"-->
+        <!--           app:layout_constraintEnd_toEndOf="parent">-->
+
+        <!--           <androidx.appcompat.widget.AppCompatImageView-->
+        <!--               android:layout_width="100dp"-->
+        <!--               android:layout_height="100dp"-->
+        <!--               android:scaleType="fitXY"-->
+        <!--               android:layout_gravity="fill_horizontal"-->
+        <!--               android:src="@drawable/img_1" />-->
+
+        <!--           <androidx.appcompat.widget.AppCompatImageView-->
+        <!--               android:layout_width="100dp"-->
+        <!--               android:layout_height="100dp"-->
+        <!--               android:layout_gravity="fill_horizontal"-->
+        <!--               android:src="@drawable/img_1"/>-->
+        <!--           <androidx.appcompat.widget.AppCompatImageView-->
+        <!--               android:layout_width="100dp"-->
+        <!--               android:layout_height="100dp"-->
+        <!--               android:layout_gravity="fill_horizontal"-->
+        <!--               android:src="@drawable/img_1"/>-->
+
+
+        <!--       </GridLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_edit_profile">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgGrid"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_grid"
+                app:layout_constraintEnd_toEndOf="@id/img_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgReels"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_reels"
+                app:layout_constraintTop_toTopOf="@id/imgGrid"
+                app:layout_constraintStart_toEndOf="@id/imgGrid"
+                app:layout_constraintEnd_toStartOf="@id/imgContact"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgContact"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_contact"
+                app:layout_constraintStart_toStartOf="@id/img_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_1"
+                android:layout_marginTop="10dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/img_2"
+                app:layout_constraintStart_toStartOf="@id/cl_1"
+                app:layout_constraintTop_toBottomOf="@id/imgGrid" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_2"
+                android:layout_width="0dp"
+                android:src="@drawable/img_2"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/img_3"
+                app:layout_constraintStart_toEndOf="@id/img_1"
+                app:layout_constraintTop_toTopOf="@id/img_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_3"
+                android:layout_width="0dp"
+                android:src="@drawable/img_3"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@id/cl_1"
+                app:layout_constraintStart_toEndOf="@id/img_2"
+                app:layout_constraintTop_toTopOf="@id/img_2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_1">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_4"
+                app:layout_constraintEnd_toStartOf="@id/img_5"
+                app:layout_constraintStart_toStartOf="@id/cl_2"
+                app:layout_constraintTop_toTopOf="@id/cl_2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_5"
+                android:layout_width="0dp"
+                android:src="@drawable/img_5"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/img_6"
+                app:layout_constraintStart_toEndOf="@id/img_4"
+                app:layout_constraintTop_toTopOf="@id/cl_2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_6"
+                android:layout_width="0dp"
+                android:src="@drawable/img_6"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@id/cl_2"
+                app:layout_constraintStart_toEndOf="@id/img_5"
+                app:layout_constraintTop_toTopOf="@id/cl_2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_2">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_7"
+                app:layout_constraintEnd_toStartOf="@id/img_8"
+                app:layout_constraintStart_toStartOf="@id/cl_3"
+                app:layout_constraintTop_toTopOf="@id/cl_3" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_8"
+                android:layout_width="0dp"
+                android:src="@drawable/img_8"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/img_9"
+                app:layout_constraintStart_toEndOf="@id/img_7"
+                app:layout_constraintTop_toTopOf="@id/cl_3" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_9"
+                android:layout_width="0dp"
+                android:src="@drawable/img_9"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@id/cl_3"
+                app:layout_constraintStart_toEndOf="@id/img_8"
+                app:layout_constraintTop_toTopOf="@id/cl_3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ic_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@id/ic_home"
+            app:layout_constraintEnd_toStartOf="@id/ic_add"
+            app:layout_constraintStart_toEndOf="@id/ic_home"
+            app:layout_constraintTop_toTopOf="@id/ic_home" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_add_box"
+            app:layout_constraintBottom_toBottomOf="@id/ic_search"
+            app:layout_constraintEnd_toStartOf="@id/ic_reels_2"
+            app:layout_constraintStart_toEndOf="@id/ic_search"
+            app:layout_constraintTop_toTopOf="@id/ic_search" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_reels_2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_reels"
+            app:layout_constraintBottom_toBottomOf="@id/ic_add"
+            app:layout_constraintEnd_toStartOf="@id/ic_user_pic2"
+            app:layout_constraintStart_toEndOf="@id/ic_add"
+            app:layout_constraintTop_toTopOf="@id/ic_add" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ic_user_pic2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="250dp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_reels_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ic_reels_2"
+            app:layout_constraintTop_toTopOf="@id/ic_reels_2">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="250dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/download" />
+
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

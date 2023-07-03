@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">AndroidTraining</string>
+
+    <string name="task_21_june_fragments">Task 21 June Fragments</string>
+    <string name="task_19_june_intent">Task 19 June Intent</string>
+    <string name="task_16_june_spotify">Task 16 June Spotify</string>
+    <string name="task_15_june_recycler_view">Task 15 June Recycler View</string>
+    <string name="task_14_june_pattern">Task 14 June Pattern</string>
+    <string name="task_9_june_instagram">Task 9 June Instagram</string>
+    <string name="task_28_june_dialogs">Task 28 June Dialogs</string>
+    <string name="task_20_june_life_cycle">Task 20 June Life Cycle</string>
+
+
+    <!--   Instagram Activity -->
+    <string name="txt_user_name">mad.bhavsar</string>
+    <string name="txt_user_name_2">Madhav Bhavsar</string>
+    <string name="random_number">90K</string>
+    <string name="share_profile">Share Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="followings">Followings</string>
+
+
+    <!--    Pattern task and Form Task-->
+    <string name="submit">Submit</string>
+    <string name="input">Input: </string>
+    <string name="enter_text_here">Enter text here ...</string>
+    <string name="task">Task: </string>
+    <string name="panildrome">Panildrome</string>
+    <string name="pattern_1">Pattern 1</string>
+    <string name="pattern_2">Pattern 2</string>
+    <string name="reverse_string">Reverse String</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="gender">Gender</string>
+
+
+    <!-- Spotify Task-->
+    <string name="hello_world">Hello World</string>
+    <string name="podcasts_shows"><![CDATA[Podcasts & Shows]]></string>
+    <string name="music">Music</string>
+    <string name="song_decription">Song Decription</string>
+    <string name="good_evening">Good evening</string>
+    <string name="shows_you_might_like">Shows you might like</string>
+    <string name="your_favorite_artists">Your favorite artists</string>
+
+
+    <!--    Intent Task-->
+
+    <string name="enter_number">Enter Mobile Number</string>
+    <string name="implicit_intent">Implicit Intent</string>
+    <string name="explicit_intent">Explicit Intent</string>
+    <string name="zero">0</string>
+    <string name="form">Form</string>
+    <string name="call">Call</string>
+    <string name="enter_e_mail">Enter E-mail</string>
+    <string name="enter_website">Enter Website</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_mobile">Enter Mobile</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="second">Second</string>
+    <string name="first">First</string>
+    <string name="camera">Camera</string>
+    <string name="click">Click</string>
+    <string name="input_here">Input here</string>
+    <string name="shuffle">Shuffle</string>
+    <string name="card_game">Card Game</string>
+
+    <!-- Fragments task  -->
+    <string name="HOME">HOME</string>
+    <string name="STATUS">STATUS</string>
+    <string name="CALLS">CALLS</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="notification_fragment">Notification Fragment</string>
+    <string name="home_fragment">Home Fragment</string>
+    <string name="notification">Notification</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_fragment">Default Fragment</string>
+    <string name="goto_notification">Goto Notification</string>
+    <string name="fragment_1">Fragment 1</string>
+    <string name="fragment_2">Fragment 2</string>
+
+
+    <!-- Dialogs task  -->
+    <string name="alert_dialog_1">Alert Dialog 1</string>
+    <string name="bottom_sheet_1">Bottom Sheet 1</string>
+    <string name="bottom_sheet_2">Bottom Sheet 2</string>
+    <string name="alert_dialog_2">Alert Dialog 2</string>
+    <string name="dr_marcus">Dr. Marcus Mathew </string>
+    <string name="general_physician">General Physician</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="file_desc">I feel really sick in my tummy …</string>
+    <string name="home_visit">Home Visit</string>
+    <string name="edit">Edit</string>
+    <string name="cancel">Cancel</string>
+    <string name="mobile">Mobile</string>
+    <string name="e_mail">E-mail</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="tast_30_june_profiles">Tast 30 June Profiles</string>
+    <string name="search_name">Search Name</string>
+    <string name="update">Update</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="delete">Delete</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="sports">Sports</string>
+    <string name="art">Art</string>
+
+</resources>

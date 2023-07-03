@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey_white">#FFD6D6D6</color>
+    <color name="grey_white2">#E9E9E9</color>
+
+    <color name="purple">#9C27B0</color>
+
+    <color name="darkgreen">#009688</color>
+
+    <color name="pellet1">#6B705C</color>
+    <color name="pellet2">#CB997E</color>
+    <color name="pellet3">#B7b7A4</color>
+    <color name="pellet4">#9C27B0</color>
+
+    <color name="light_green">#E9F7F4</color>
+    <color name="light_green2">#5DA297</color>
+    <color name="light_red">#FDF2F3</color>
+    <color name="light_red2">#F44650</color>
+
+    <color name="custom_grey">#0D174188</color>
+
+</resources>

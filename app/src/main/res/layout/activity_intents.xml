@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="50dp"
+    android:layout_marginEnd="50dp"
+    android:layout_marginTop="50dp"
+    tools:context=".june19intent.IntentsActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInpEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconDrawable="@drawable/ic_email"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_e_mail"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInpMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconDrawable="@drawable/ic_call"
+        app:endIconMode="custom"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/txtInpEmail"
+        app:layout_constraintStart_toStartOf="@id/txtInpEmail"
+        app:layout_constraintTop_toBottomOf="@id/txtInpEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtMobile"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_number"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInpSite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconDrawable="@drawable/ic_earth"
+        app:endIconMode="custom"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/txtInpMobile"
+        app:layout_constraintStart_toStartOf="@id/txtInpMobile"
+        app:layout_constraintTop_toBottomOf="@id/txtInpMobile">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtSite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_website"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInpCam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconDrawable="@drawable/ic_camera"
+        app:endIconMode="custom"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/txtInpSite"
+        app:layout_constraintStart_toStartOf="@id/txtInpSite"
+        app:layout_constraintTop_toBottomOf="@id/txtInpSite">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxtCam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/camera"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnExplicit"
+        android:text="@string/explicit_intent"
+        app:layout_constraintTop_toBottomOf="@id/txtInpCam"
+        app:layout_constraintStart_toStartOf="@id/txtInpCam"
+        app:layout_constraintEnd_toEndOf="@id/txtInpCam"
+        android:layout_marginTop="10dp"
+
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/btnExplicit"
+        app:layout_constraintStart_toStartOf="@id/btnExplicit"
+        app:layout_constraintTop_toBottomOf="@id/btnExplicit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_here"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:text="@string/click"
+        app:layout_constraintTop_toBottomOf="@id/txtInp"
+        app:layout_constraintStart_toStartOf="@id/txtInp"
+        app:layout_constraintEnd_toEndOf="@id/txtInp"
+        android:layout_marginTop="10dp"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
