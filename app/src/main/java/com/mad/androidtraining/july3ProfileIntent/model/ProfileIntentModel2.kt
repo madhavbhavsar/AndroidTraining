@@ -1,9 +1,10 @@
-package com.mad.androidtraining.july3Profile.model
+package com.mad.androidtraining.july3ProfileIntent.model
 
 import android.os.Parcel
 import android.os.Parcelable
 
-data class ProfileIntentModel(
+data class ProfileIntentModel2(
+
     val id: String,
     val name: String,
     val email: String,
@@ -13,20 +14,22 @@ data class ProfileIntentModel(
     val dob: String,
     val gender: String,
     val hobbies: String
+
+
 ) : Parcelable {
 
     constructor(parcel: Parcel) : this(
-        parcel.readString()?:"",
-        parcel.readString()?:"",
-        parcel.readString()?:"",
-        parcel.readString()?:"",
-        parcel.readString()?:"",
-        parcel.readString()?:"",
-        parcel.readString()?:"",
-        parcel.readString()?:"",
-        parcel.readString()?:""
-    ) {
-    }
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
@@ -44,15 +47,13 @@ data class ProfileIntentModel(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<ProfileIntentModel> {
-        override fun createFromParcel(parcel: Parcel): ProfileIntentModel {
-            return ProfileIntentModel(parcel)
+    companion object CREATOR : Parcelable.Creator<ProfileIntentModel2> {
+        override fun createFromParcel(parcel: Parcel): ProfileIntentModel2 {
+            return ProfileIntentModel2(parcel)
         }
 
-        override fun newArray(size: Int): Array<ProfileIntentModel?> {
+        override fun newArray(size: Int): Array<ProfileIntentModel2?> {
             return arrayOfNulls(size)
         }
     }
-
-
 }

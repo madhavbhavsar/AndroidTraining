@@ -1,30 +1,26 @@
-package com.mad.androidtraining.july3Profile
+package com.mad.androidtraining.july3ProfileIntent
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.material.appbar.AppBarLayout
 import com.mad.androidtraining.R
-import com.mad.androidtraining.databinding.ActivityProfileBinding
 import com.mad.androidtraining.databinding.ActivityProfileIntentBinding
-import com.mad.androidtraining.july3Profile.adapter.ProfileIntentAdapter
-import com.mad.androidtraining.july3Profile.model.ProfileIntentModel
+import com.mad.androidtraining.july3ProfileIntent.adapter.ProfileIntentAdapter
+import com.mad.androidtraining.july3ProfileIntent.model.ProfileIntentModel
 
 
 class ProfileIntentActivity : AppCompatActivity() {
 
-    var data : ArrayList<ProfileIntentModel> = arrayListOf()
-
-    var dataList : HashMap<String, ProfileIntentModel> = hashMapOf()
+    var dataArrayList : ArrayList<ProfileIntentModel> = arrayListOf()
     private lateinit var profileBinding: ActivityProfileIntentBinding
+    lateinit var profile :ProfileIntentModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,14 +30,6 @@ class ProfileIntentActivity : AppCompatActivity() {
         profileBinding = ActivityProfileIntentBinding.inflate(layoutInflater)
         val view = profileBinding.root
         setContentView(view)
-
-        //val data = intent?.getParcelableExtra<ProfileIntentModel>("data") ?: ProfileIntentModel("", "","","","","","","","")
-
-//        val profile = intent.getParcelableExtra<ProfileIntentModel>("data")
-//        if (profile != null) {
-//            dataList[profile.id] = profile
-//        }
-
 
 
         Glide.with(this)
@@ -71,15 +59,8 @@ class ProfileIntentActivity : AppCompatActivity() {
 
         profileBinding.fabbtnAddProfile.setOnClickListener {
             val i = Intent(this@ProfileIntentActivity, AddProfileIntentActivity::class.java)
+            startActivityForResult(i,1)
 
-            var id =0
-            for((k,v) in dataList){
-                //Toast.makeText(this, ""+k+" "+v.id, Toast.LENGTH_SHORT).show()
-                id = Math.max(id,k.toInt())
-            }
-            i.putExtra("array",dataList)
-            //i.putExtra("id",id.toString())
-            startActivity(i)
         }
 
 
@@ -94,9 +75,9 @@ class ProfileIntentActivity : AppCompatActivity() {
 
                 if(profileBinding.edtSearch.text.toString().isEmpty()){
                     //profileBinding.edtSearch.clearFocus()
-                    data = getArrayList(this@ProfileIntentActivity)
-                    setRecyclerView(data)
-                    setAutoCompleteTextView(data)
+                    dataArrayList = getArrayList(this@ProfileIntentActivity)
+                    setRecyclerView(dataArrayList)
+                    setAutoCompleteTextView(dataArrayList)
                 }
 
             }
@@ -107,7 +88,7 @@ class ProfileIntentActivity : AppCompatActivity() {
 
             val nameSelected:String = adapterView.getItemAtPosition(i).toString()
             val newarray = arrayListOf<ProfileIntentModel>()
-            for(i in data){
+            for(i in dataArrayList){
                 if(i.name == nameSelected){
                     newarray.add(i)
                 }
@@ -128,7 +109,7 @@ class ProfileIntentActivity : AppCompatActivity() {
         val arrayNames = arrayListOf<String>()
         for (i in data){
             if(!arrayNames.contains(i.name)){
-                arrayNames.add(i.name)
+                i.name?.let { arrayNames.add(it) }
             }
         }
         val arrayAdapter:ArrayAdapter<String>  = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,arrayNames)
@@ -139,8 +120,10 @@ class ProfileIntentActivity : AppCompatActivity() {
     private fun getArrayList(context: Context) :ArrayList<ProfileIntentModel>{
         val arrayList:ArrayList<ProfileIntentModel> = arrayListOf()
 
-        for ((key, value) in dataList) {
-           arrayList.add(value)
+        for (i in dataArrayList) {
+            if(i.name==profileBinding.edtSearch.text.toString()){
+                arrayList.add(i)
+            }
         }
         return arrayList
     }
@@ -148,28 +131,45 @@ class ProfileIntentActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        val profile = intent.getParcelableExtra<ProfileIntentModel>("data")
-        if (profile != null) {
-            dataList[profile.id] = profile
-        }
-
-        Log.i("dataList",dataList.toString())
-
-
-        data = getArrayList(this)
-        setAutoCompleteTextView(data)
+        setAutoCompleteTextView(dataArrayList)
 
         var newarray = arrayListOf<ProfileIntentModel>()
-        for(i in data){
+        for(i in dataArrayList){
             if(i.name == profileBinding.edtSearch.text.toString()){
                 newarray.add(i)
             }
         }
 
         if(newarray.isEmpty()){
-            newarray = data
+            newarray = dataArrayList
         }
         setRecyclerView(newarray)
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode === 1) {
+            if (resultCode === RESULT_OK) {
+
+                profile = ProfileIntentModel(
+                    data?.getStringExtra("id"),
+                    data?.getStringExtra("name"),
+                    data?.getStringExtra("email"),
+                    data?.getStringExtra("mobile"),
+                    data?.getStringExtra("password"),
+                    data?.getStringExtra("confpassword"),
+                    data?.getStringExtra("dob"),
+                    data?.getStringExtra("gender"),
+                    data?.getStringExtra("hobbies")
+                )
+
+                dataArrayList.add(profile)
+
+
+            }
+        }
+
 
     }
 

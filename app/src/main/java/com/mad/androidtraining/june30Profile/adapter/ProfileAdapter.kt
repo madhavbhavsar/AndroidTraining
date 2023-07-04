@@ -61,7 +61,7 @@ class ProfileAdapter (var context:Context, var data:ArrayList<ProfileModel>) :
 
 
         holder.btnEdit.setOnClickListener {
-            editAlertDialog(model)
+            editAlertDialog(model,position,holder)
         }
 
         holder.btnDelete.setOnClickListener {
@@ -109,7 +109,7 @@ class ProfileAdapter (var context:Context, var data:ArrayList<ProfileModel>) :
 
     }
 
-    private fun editAlertDialog(model: ProfileModel) {
+    private fun editAlertDialog(model: ProfileModel , position: Int, holder: ProfileViewHolder) {
 
         val alertDialogBuilder = AlertDialog.Builder(context)
         val inflater = LayoutInflater.from(context)
@@ -183,6 +183,8 @@ class ProfileAdapter (var context:Context, var data:ArrayList<ProfileModel>) :
                     getGender(btnMale,btnFemale),
                     getHobbies(cbSports, cbMusic,cbArt)
                 )
+
+
 
                 updateIdtoSharedPreferences(context,id,profile)
                 Toast.makeText(context, "Profile Updated", Toast.LENGTH_SHORT).show()

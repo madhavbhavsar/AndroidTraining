@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".july3Profile.ProfileIntentActivity">
+    tools:context=".july3ProfileIntent.ProfileIntentActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

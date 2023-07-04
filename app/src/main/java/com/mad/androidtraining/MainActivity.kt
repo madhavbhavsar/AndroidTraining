@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.mad.androidtraining.cardgame.CardGameActivity
-import com.mad.androidtraining.july3Profile.ProfileIntentActivity
+import com.mad.androidtraining.july3ProfileIntent.ProfileIntentActivity
 import com.mad.androidtraining.june14patterns.PatternsActivity
 import com.mad.androidtraining.june15recyclerview.RecyclerViewActivity
 import com.mad.androidtraining.june16spotify.SpotifyActivity
 import com.mad.androidtraining.june19intent.IntentsActivity
 import com.mad.androidtraining.june20lifecycle.LifeCycleActivity
-import com.mad.androidtraining.june21fragments.FragmentActivity
 import com.mad.androidtraining.june21fragments.FragmentSecondActivity
 import com.mad.androidtraining.june28dialogs.DialogsActivity
 import com.mad.androidtraining.june30Profile.ProfileActivity

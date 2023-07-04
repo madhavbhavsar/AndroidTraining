@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".july3Profile.AddProfileIntentActivity">
+    android:fillViewport="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    tools:context=".july3ProfileIntent.AddProfileIntentActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -79,12 +80,11 @@
             android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:endIconDrawable="@drawable/ic_eye"
-            app:endIconMode="custom"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="@id/txtMobile"
             app:layout_constraintStart_toStartOf="@id/txtMobile"
-            app:layout_constraintTop_toBottomOf="@id/txtMobile">
+            app:layout_constraintTop_toBottomOf="@id/txtMobile"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtPassword"
@@ -101,13 +101,11 @@
             android:id="@+id/txtConfPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:endIconDrawable="@drawable/ic_eye"
-            app:endIconMode="custom"
-
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="@id/txtPassword"
             app:layout_constraintStart_toStartOf="@id/txtPassword"
-            app:layout_constraintTop_toBottomOf="@id/txtPassword">
+            app:layout_constraintTop_toBottomOf="@id/txtPassword"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtConfPassword"
@@ -124,10 +122,10 @@
             android:id="@+id/txtDob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:endIconDrawable="@drawable/ic_calendar"
-            app:endIconMode="custom"
-
             android:layout_marginTop="10dp"
+            app:endIconDrawable="@drawable/ic_calendar"
+
+            app:endIconMode="custom"
             app:layout_constraintEnd_toEndOf="@id/txtConfPassword"
             app:layout_constraintStart_toStartOf="@id/txtConfPassword"
             app:layout_constraintTop_toBottomOf="@id/txtConfPassword">
@@ -151,9 +149,7 @@
             android:background="@drawable/btn_submitprofile"
             android:text="@string/submit"
             app:backgroundTint="@null"
-            android:layout_marginBottom="50dp"
             app:layout_constraintEnd_toEndOf="@id/linearlayoutHobbies"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/linearlayoutHobbies"
             app:layout_constraintTop_toBottomOf="@id/linearlayoutHobbies" />
 
@@ -168,21 +164,20 @@
             app:layout_constraintTop_toBottomOf="@id/txtDob">
 
             <com.google.android.material.textview.MaterialTextView
-                android:padding="20dp"
-                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/gender"
                 android:layout_gravity="center_vertical"
-                />
+                android:padding="20dp"
+                android:text="@string/gender"
+                android:textSize="15sp" />
 
             <RadioGroup
                 android:id="@+id/rgGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center|start"
                 android:layout_gravity="center"
+                android:gravity="center|start"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="@id/txtDob"
                 app:layout_constraintStart_toStartOf="@id/txtDob"
                 app:layout_constraintTop_toBottomOf="@id/txtDob">
@@ -211,29 +206,28 @@
             android:id="@+id/linearlayoutHobbies"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center|start"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@id/linearlayoutGender"
             app:layout_constraintStart_toStartOf="@id/linearlayoutGender"
             app:layout_constraintTop_toBottomOf="@id/linearlayoutGender">
 
             <com.google.android.material.textview.MaterialTextView
-                android:padding="20dp"
-                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hobbies"
                 android:layout_gravity="center_vertical"
-                />
+                android:padding="20dp"
+                android:text="@string/hobbies"
+                android:textSize="15sp" />
 
 
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/cbSports"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="10dp"
                 android:text="@string/sports"
 
                 />
@@ -241,10 +235,10 @@
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/cbMusic"
                 android:layout_width="wrap_content"
-                android:padding="10dp"
                 android:layout_height="wrap_content"
-android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="10dp"
                 android:text="@string/music"
 
                 />
@@ -252,10 +246,10 @@ android:layout_weight="1"
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:id="@+id/cbArt"
                 android:layout_width="wrap_content"
-                android:padding="10dp"
-                android:layout_weight="1"
-                android:layout_gravity="center"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="10dp"
                 android:text="@string/art" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

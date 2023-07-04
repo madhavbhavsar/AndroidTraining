@@ -1,24 +1,19 @@
-package com.mad.androidtraining.july3Profile
+package com.mad.androidtraining.july3ProfileIntent
 
 import android.app.DatePickerDialog
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.mad.androidtraining.databinding.ActivityAddProfileIntentBinding
-import com.mad.androidtraining.july3Profile.model.HashMapWrapper
-import com.mad.androidtraining.july3Profile.model.ProfileIntentModel
-import com.mad.androidtraining.july3Profile.model.ProfileIntentModel2
-import com.mad.androidtraining.june30Profile.model.ProfileModel
+import com.mad.androidtraining.july3ProfileIntent.model.ProfileIntentModel
 import java.util.*
 import java.util.regex.Pattern
 
 class AddProfileIntentActivity : AppCompatActivity() {
 
     var data: ArrayList<ProfileIntentModel> = arrayListOf()
-    var dataList : HashMap<String, Any> = hashMapOf()
     private lateinit var addProfileBinding: ActivityAddProfileIntentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,15 +24,9 @@ class AddProfileIntentActivity : AppCompatActivity() {
         val view = addProfileBinding.root
         setContentView(view)
 
-
-        dataList = intent.getParcelableExtra("array")!!
-
-        Log.i("dataList add",dataList.toString())
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 
         dateOfBirth()
-
-
-        //arrayList = getArrayFromSharedPreferences(this)
 
 
         addProfileBinding.btnSubmit.setOnClickListener {
@@ -64,15 +53,7 @@ class AddProfileIntentActivity : AppCompatActivity() {
                 showToast("Select 1 minimum hobby")
             } else {
 
-                //val id = getIdFromArray(arrayList)
-                var id =0
-                for((k,v) in dataList){
-                    //Toast.makeText(this, ""+k+" "+v.id, Toast.LENGTH_SHORT).show()
-                    id = Math.max(id,k.toInt())
-                }
-                id+=1
-
-                addProfile(id.toString())
+                addProfile("0")
 
                 val snack = Snackbar.make(it,"Profile Added", Snackbar.LENGTH_LONG)
                 snack.show()
@@ -144,11 +125,22 @@ class AddProfileIntentActivity : AppCompatActivity() {
 //        intent.putExtra("id2",profile.id)
 //        startActivity(intent)
 
+        val i = intent
+        i.putExtra("id",id)
+        i.putExtra("name",addProfileBinding.edtName.text.toString().trim())
+        i.putExtra("email",addProfileBinding.edtEmail.text.toString().trim())
+        i.putExtra("mobile",addProfileBinding.edtMobile.text.toString().trim())
+        i.putExtra("password",addProfileBinding.edtPassword.text.toString().trim())
+        i.putExtra("confpassword",addProfileBinding.edtConfPassword.text.toString().trim())
+        i.putExtra("dob",addProfileBinding.edtDob.text.toString().trim())
+        i.putExtra("gender",getGender())
+        i.putExtra("hobbies",getHobbies())
 
-        val intent = Intent(this, ProfileIntentActivity::class.java)
-        intent.putExtra("data", profile)
-        startActivity(intent)
+        setResult(RESULT_OK,i);
+
+        onBackPressed()
         finish()
+
 
 
     }
@@ -235,6 +227,9 @@ class AddProfileIntentActivity : AppCompatActivity() {
     private fun showToast(s: String) {
         Toast.makeText(this@AddProfileIntentActivity, s, Toast.LENGTH_SHORT).show()
     }
+
+
+
 
 
 

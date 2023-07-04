@@ -1,4 +1,4 @@
-package com.mad.androidtraining.july3Profile.adapter
+package com.mad.androidtraining.july3ProfileIntent.adapter
 
 import android.app.DatePickerDialog
 import android.content.Context
@@ -19,8 +19,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
 import com.mad.androidtraining.R
-import com.mad.androidtraining.july3Profile.ProfileIntentActivity
-import com.mad.androidtraining.july3Profile.model.ProfileIntentModel
+import com.mad.androidtraining.july3ProfileIntent.ProfileIntentActivity
+import com.mad.androidtraining.july3ProfileIntent.model.ProfileIntentModel
 import java.util.*
 import java.util.regex.Pattern
 import kotlin.collections.ArrayList
@@ -58,16 +58,16 @@ class ProfileIntentAdapter (var context:Context, var data:ArrayList<ProfileInten
 
 
         holder.btnEdit.setOnClickListener {
-            editAlertDialog(model)
+            editAlertDialog(model,holder,position)
         }
 
         holder.btnDelete.setOnClickListener {
-            deleteAlertDialog(model)
+            deleteAlertDialog(model,holder,position)
         }
 
     }
 
-    private fun deleteAlertDialog(model: ProfileIntentModel) {
+    private fun deleteAlertDialog(model: ProfileIntentModel, holder: ProfileViewHolder,position: Int) {
 
         val alertDialogBuilder = AlertDialog.Builder(context)
         val inflater = LayoutInflater.from(context)
@@ -80,13 +80,14 @@ class ProfileIntentAdapter (var context:Context, var data:ArrayList<ProfileInten
         val btnCancel = dialogView.findViewById<Button>(R.id.btnCancel)
         val txtDelete = dialogView.findViewById<TextView>(R.id.txtDelete)
 
-        txtDelete.setText("Delete ${model.name}")
+        txtDelete.setText("Delete ${model?.name}")
 
         btnDelete.setOnClickListener {
 
-            Log.i("idtodelete",model.id)
-            val sharedPreferences = context.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
-            sharedPreferences.edit().remove(model.id).apply()
+            //Log.i("idtodelete",model.id)
+//            val sharedPreferences = context.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
+//            sharedPreferences.edit().remove(model.id).apply()
+            data.removeAt(position)
             Toast.makeText(context, "Profile Deleted", Toast.LENGTH_SHORT).show()
 
             alertDialog.dismiss()
@@ -106,7 +107,7 @@ class ProfileIntentAdapter (var context:Context, var data:ArrayList<ProfileInten
 
     }
 
-    private fun editAlertDialog(model: ProfileIntentModel) {
+    private fun editAlertDialog(model: ProfileIntentModel, holder: ProfileViewHolder,position: Int) {
 
         val alertDialogBuilder = AlertDialog.Builder(context)
         val inflater = LayoutInflater.from(context)
@@ -136,8 +137,8 @@ class ProfileIntentAdapter (var context:Context, var data:ArrayList<ProfileInten
         alertDialog.show()
 
         dateOfBirth(edtDob,txtDob)
-        setGender(btnMale,btnFemale,model.gender)
-        setHobbies(cbSports,cbMusic,cbArt,model.hobbies)
+        model.gender?.let { setGender(btnMale,btnFemale, it) }
+        model.hobbies?.let { setHobbies(cbSports,cbMusic,cbArt, it) }
 
 
         edtName.setText( model.name)
@@ -168,6 +169,24 @@ class ProfileIntentAdapter (var context:Context, var data:ArrayList<ProfileInten
             } else {
 
                 val id = model.id
+
+                val profile = ProfileIntentModel(
+                    id,
+                    edtName.text.toString().trim(),
+                    edtEmail.text.toString().trim(),
+                    edtMobile.text.toString().trim(),
+                    edtPassword.text.toString().trim(),
+                    edtConfPassword.text.toString().trim(),
+                    edtDob.text.toString().trim(),
+                    getGender(btnMale, btnFemale),
+                    getHobbies(cbSports,cbMusic,cbArt)
+                )
+                //Toast.makeText(context, ""+position+" "+ data[position].name, Toast.LENGTH_SHORT).show()
+
+                data[position] = profile
+
+
+
 //
 //                val profile = ProfileIntentModel()
 //                profile.id =  id
@@ -195,7 +214,7 @@ class ProfileIntentAdapter (var context:Context, var data:ArrayList<ProfileInten
 
         alertDialog.setOnDismissListener {
             if (context is ProfileIntentActivity) {
-                (context as ProfileIntentActivity).updateData()
+                //(context as ProfileIntentActivity).updateData()
             }
         }
     }
@@ -228,15 +247,7 @@ class ProfileIntentAdapter (var context:Context, var data:ArrayList<ProfileInten
 
     }
 
-    private fun updateIdtoSharedPreferences(context: Context, id: String, profile: ProfileIntentModel) {
-        val preferences: SharedPreferences = context.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = preferences.edit()
-        val gson = Gson()
-        val json = gson.toJson(profile)
-        editor.putString(id, json)
-        editor.apply()
 
-    }
     private fun dateOfBirth(edtDob:EditText,txtDob:TextInputLayout) {
         edtDob.isEnabled = false
 
