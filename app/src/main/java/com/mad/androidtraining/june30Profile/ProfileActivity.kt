@@ -60,7 +60,7 @@ class ProfileActivity : AppCompatActivity() {
 
 
 
-        profileBinding.btnAddProfile.setOnClickListener {
+        profileBinding.fabbtnAddProfile.setOnClickListener {
             val i = Intent(this@ProfileActivity,AddProfileActivity::class.java)
             startActivity(i)
         }

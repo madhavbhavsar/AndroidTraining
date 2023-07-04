@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".june30Profile.AddProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -177,7 +176,7 @@
                 />
 
             <RadioGroup
-                android:id="@+id/radioGroupGender"
+                android:id="@+id/rgGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -188,14 +187,14 @@
                 app:layout_constraintTop_toBottomOf="@id/txtDob">
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/btnMale"
+                    android:id="@+id/rbMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="@string/male" />
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/btnFemale"
+                    android:id="@+id/rbFemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -228,18 +227,18 @@
 
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/checkboxSports"
+                android:id="@+id/cbSports"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:text="Sports"
+                android:text="@string/sports"
 
                 />
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/checkboxMusic"
+                android:id="@+id/cbMusic"
                 android:layout_width="wrap_content"
                 android:padding="10dp"
                 android:layout_height="wrap_content"
@@ -250,13 +249,13 @@ android:layout_weight="1"
                 />
 
             <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/checkBoxArt"
+                android:id="@+id/cbArt"
                 android:layout_width="wrap_content"
                 android:padding="10dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:text="Art" />
+                android:text="@string/art" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

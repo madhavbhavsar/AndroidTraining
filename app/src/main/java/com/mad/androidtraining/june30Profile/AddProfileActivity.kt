@@ -90,11 +90,11 @@ class AddProfileActivity : AppCompatActivity() {
         addProfileBinding.edtConfPassword.setText("")
         addProfileBinding.edtDob.setText("")
 
-        addProfileBinding.btnMale.isChecked = false
-        addProfileBinding.btnFemale.isChecked = false
-        addProfileBinding.checkboxSports.isChecked = false
-        addProfileBinding.checkboxMusic.isChecked = false
-        addProfileBinding.checkBoxArt.isChecked = false
+        addProfileBinding.rbMale.isChecked = false
+        addProfileBinding.rbFemale.isChecked = false
+        addProfileBinding.cbSports.isChecked = false
+        addProfileBinding.cbMusic.isChecked = false
+        addProfileBinding.cbArt.isChecked = false
 
 
     }
@@ -151,10 +151,10 @@ class AddProfileActivity : AppCompatActivity() {
 
     private fun getGender(): String {
         var gender = ""
-        if (addProfileBinding.btnMale.isChecked) {
+        if (addProfileBinding.rbMale.isChecked) {
             gender = "M"
         }
-        if (addProfileBinding.btnFemale.isChecked) {
+        if (addProfileBinding.rbFemale.isChecked) {
             gender = "F"
         }
         return gender
@@ -162,13 +162,13 @@ class AddProfileActivity : AppCompatActivity() {
 
     private fun getHobbies(): String {
         var checkbox = ""
-        if (addProfileBinding.checkboxSports.isChecked) {
+        if (addProfileBinding.cbSports.isChecked) {
             checkbox += "S"
         }
-        if (addProfileBinding.checkboxMusic.isChecked) {
+        if (addProfileBinding.cbMusic.isChecked) {
             checkbox += "M"
         }
-        if (addProfileBinding.checkBoxArt.isChecked) {
+        if (addProfileBinding.cbArt.isChecked) {
             checkbox += "A"
         }
         return checkbox
@@ -185,7 +185,7 @@ class AddProfileActivity : AppCompatActivity() {
 
     private fun validateGender(): Boolean {
 
-        if (!addProfileBinding.btnMale.isChecked && !addProfileBinding.btnFemale.isChecked) {
+        if (!addProfileBinding.rbMale.isChecked && !addProfileBinding.rbFemale.isChecked) {
             return true;
         }
         return false
@@ -193,7 +193,7 @@ class AddProfileActivity : AppCompatActivity() {
 
     private fun validateHobbies(): Boolean {
 
-        if (!addProfileBinding.checkboxSports.isChecked && !addProfileBinding.checkboxMusic.isChecked && !addProfileBinding.checkBoxArt.isChecked) {
+        if (!addProfileBinding.cbSports.isChecked && !addProfileBinding.cbMusic.isChecked && !addProfileBinding.cbArt.isChecked) {
             return true;
         }
         return false

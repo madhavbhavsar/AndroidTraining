@@ -89,9 +89,16 @@
             android:id="@+id/btnProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tast_30_june_profiles"
+            android:text="@string/task_30_june_profiles"
             app:layout_constraintStart_toStartOf="@id/btnDialogs"
             app:layout_constraintTop_toBottomOf="@id/btnDialogs" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnProfileIntent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/july_3_profiles_intent"
+            app:layout_constraintStart_toStartOf="@id/btnProfile"
+            app:layout_constraintTop_toBottomOf="@id/btnProfile" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCardGame"
@@ -99,8 +106,8 @@
             android:layout_height="wrap_content"
             android:text="@string/card_game"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="@id/btnProfile"
-            app:layout_constraintTop_toBottomOf="@id/btnProfile" />
+            app:layout_constraintStart_toStartOf="@id/btnProfileIntent"
+            app:layout_constraintTop_toBottomOf="@id/btnProfileIntent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

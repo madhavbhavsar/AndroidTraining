@@ -21,6 +21,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTraining"
         tools:targetApi="31">
+
+        <activity
+            android:name=".july3Profile.AddProfileIntentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".july3Profile.ProfileIntentActivity"
+            android:exported="false" />
         <activity
             android:name=".june30Profile.AddProfileActivity"
             android:exported="false" />

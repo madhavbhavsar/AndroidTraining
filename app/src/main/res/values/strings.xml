@@ -9,6 +9,8 @@
     <string name="task_9_june_instagram">Task 9 June Instagram</string>
     <string name="task_28_june_dialogs">Task 28 June Dialogs</string>
     <string name="task_20_june_life_cycle">Task 20 June Life Cycle</string>
+    <string name="task_30_june_profiles">Task 30 June Profiles</string>
+    <string name="july_3_profiles_intent">Task 3 July Profile Intent</string>
 
 
     <!--   Instagram Activity -->
@@ -103,7 +105,6 @@
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="date_of_birth">Date of Birth</string>
-    <string name="tast_30_june_profiles">Tast 30 June Profiles</string>
     <string name="search_name">Search Name</string>
     <string name="update">Update</string>
     <string name="are_you_sure">Are you sure?</string>
