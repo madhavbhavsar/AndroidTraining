@@ -101,13 +101,21 @@
             app:layout_constraintTop_toBottomOf="@id/btnProfile" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnProfileFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/july_4_profile_fragment"
+            app:layout_constraintStart_toStartOf="@id/btnProfileIntent"
+            app:layout_constraintTop_toBottomOf="@id/btnProfileIntent" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCardGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/card_game"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="@id/btnProfileIntent"
-            app:layout_constraintTop_toBottomOf="@id/btnProfileIntent" />
+            app:layout_constraintStart_toStartOf="@id/btnProfileFragment"
+            app:layout_constraintTop_toBottomOf="@id/btnProfileFragment" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

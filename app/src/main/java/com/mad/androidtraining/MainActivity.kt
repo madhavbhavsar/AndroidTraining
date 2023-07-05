@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.mad.androidtraining.cardgame.CardGameActivity
 import com.mad.androidtraining.july3ProfileIntent.ProfileIntentActivity
+import com.mad.androidtraining.july4ProfileFragment.ProfileFragmentActivity
 import com.mad.androidtraining.june14patterns.PatternsActivity
 import com.mad.androidtraining.june15recyclerview.RecyclerViewActivity
 import com.mad.androidtraining.june16spotify.SpotifyActivity
@@ -86,6 +87,12 @@ class MainActivity : AppCompatActivity() {
         val btnProfileIntent = findViewById<Button>(R.id.btnProfileIntent)
         btnProfileIntent.setOnClickListener {
             val i = Intent(this, ProfileIntentActivity::class.java)
+            startActivity(i)
+        }
+
+        val btnProfileFragment = findViewById<Button>(R.id.btnProfileFragment)
+        btnProfileFragment.setOnClickListener {
+            val i = Intent(this, ProfileFragmentActivity::class.java)
             startActivity(i)
         }
     }
