@@ -214,7 +214,7 @@ class ProfileIntentAdapter (var context:Context, var data:ArrayList<ProfileInten
 
         alertDialog.setOnDismissListener {
             if (context is ProfileIntentActivity) {
-                //(context as ProfileIntentActivity).updateData()
+                (context as ProfileIntentActivity).updateData()
             }
         }
     }

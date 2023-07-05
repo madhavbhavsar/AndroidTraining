@@ -113,5 +113,6 @@
     <string name="hobbies">Hobbies</string>
     <string name="sports">Sports</string>
     <string name="art">Art</string>
+    <string name="set_data">Set Data</string>
 
 </resources>

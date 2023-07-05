@@ -150,8 +150,20 @@
                 app:backgroundTint="@null"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/linearlayoutHobbies"
-                app:layout_constraintStart_toStartOf="@id/linearlayoutHobbies"
+                app:layout_constraintStart_toEndOf="@id/btnData"
                 app:layout_constraintTop_toBottomOf="@id/linearlayoutHobbies" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:visibility="visible"
+                android:background="@drawable/btn_submitprofile"
+                android:text="@string/set_data"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="@id/btnSubmit"
+                app:layout_constraintEnd_toStartOf="@id/btnSubmit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnSubmit" />
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
