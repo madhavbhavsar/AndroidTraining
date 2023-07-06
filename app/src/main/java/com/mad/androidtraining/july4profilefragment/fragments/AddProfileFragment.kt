@@ -1,4 +1,4 @@
-package com.mad.androidtraining.july4ProfileFragment.fragments
+package com.mad.androidtraining.july4profilefragment.fragments
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.mad.androidtraining.R
 import com.mad.androidtraining.databinding.FragmentAddProfileBinding
-import com.mad.androidtraining.july4ProfileFragment.ProfileFragmentActivity
-import com.mad.androidtraining.july4ProfileFragment.model.ProfileFragmentModel
+import com.mad.androidtraining.july4profilefragment.ProfileFragmentActivity
+import com.mad.androidtraining.july4profilefragment.model.ProfileFragmentModel
 import java.util.Calendar
 import java.util.regex.Pattern
 
@@ -124,22 +124,34 @@ class AddProfileFragment : Fragment() {
     private fun addProfile(id: String) {
 
 
-        val profile = ProfileFragmentModel(
-            addProfileFragment.edtName.text.toString().trim(),
-            addProfileFragment.edtEmail.text.toString().trim(),
-            addProfileFragment.edtMobile.text.toString().trim(),
-            addProfileFragment.edtPassword.text.toString().trim(),
-            addProfileFragment.edtConfPassword.text.toString().trim(),
-            addProfileFragment.edtDob.text.toString().trim(),
-            getGender(),
-            getHobbies()
-        )
-
+//        val profile = ProfileFragmentModel(
+//            addProfileFragment.edtName.text.toString().trim(),
+//            addProfileFragment.edtEmail.text.toString().trim(),
+//            addProfileFragment.edtMobile.text.toString().trim(),
+//            addProfileFragment.edtPassword.text.toString().trim(),
+//            addProfileFragment.edtConfPassword.text.toString().trim(),
+//            addProfileFragment.edtDob.text.toString().trim(),
+//            getGender(),
+//            getHobbies()
+//        )
         val profileListFragment = ProfileListFragment()
-        profileListFragment.sendData(profile)
+        val args = Bundle()
+        args.putString("name", addProfileFragment.edtName.text.toString().trim())
+        args.putString("email", addProfileFragment.edtEmail.text.toString().trim())
+        args.putString("mobile", addProfileFragment.edtMobile.text.toString().trim())
+        args.putString("password", addProfileFragment.edtPassword.text.toString().trim())
+        args.putString("confpassword", addProfileFragment.edtConfPassword.text.toString().trim())
+        args.putString("dob", addProfileFragment.edtDob.text.toString().trim())
+        args.putString("gender", getGender())
+        args.putString("hobbies", getHobbies())
 
-        val profileFragmentActivity = requireActivity() as ProfileFragmentActivity
-        profileFragmentActivity.profileFragmentBinding.vpProfiles.currentItem = 0
+        profileListFragment.arguments = args
+
+
+
+        val activity = requireActivity() as ProfileFragmentActivity
+        activity.saveData(0,args)
+        activity.profileFragmentBinding.vpProfiles.currentItem=0
 
 
 //        val intent: Intent =
@@ -164,6 +176,16 @@ class AddProfileFragment : Fragment() {
         //finish()
 
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        var bundle = Bundle()
+        val activity = requireActivity() as ProfileFragmentActivity
+       // bundle = activity.getSavedDataBundle()!!
+
+        addProfileFragment.edtName.setText(bundle.getString("update") + " "+bundle.getString("name"))
 
     }
 

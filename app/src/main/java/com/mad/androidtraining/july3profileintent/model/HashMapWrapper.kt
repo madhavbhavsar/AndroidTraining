@@ -1,4 +1,4 @@
-package com.mad.androidtraining.july3ProfileIntent.model
+package com.mad.androidtraining.july3profileintent.model
 
 import android.os.Parcel
 import android.os.Parcelable

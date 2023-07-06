@@ -1,13 +1,10 @@
-package com.mad.androidtraining.july4ProfileFragment.adapter
+package com.mad.androidtraining.july4profilefragment.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.mad.androidtraining.july4ProfileFragment.fragments.AddProfileFragment
-import com.mad.androidtraining.july4ProfileFragment.fragments.ProfileListFragment
-import com.mad.androidtraining.june21fragments.fragments.HomeFragment
-import com.mad.androidtraining.june21fragments.fragments.NotificationFragment
-import com.mad.androidtraining.june21fragments.fragments.ProfileFragment
+import com.mad.androidtraining.july4profilefragment.fragments.AddProfileFragment
+import com.mad.androidtraining.july4profilefragment.fragments.ProfileListFragment
 
 class ProfileViewPagerAdapter(fa:FragmentActivity, private val list:List<String>) :
     FragmentStateAdapter(fa) {

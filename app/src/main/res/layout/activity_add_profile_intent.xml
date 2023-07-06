@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     app:layout_constraintBottom_toBottomOf="parent"
-    tools:context=".july3ProfileIntent.AddProfileIntentActivity">
+    tools:context=".july3profileintent.AddProfileIntentActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

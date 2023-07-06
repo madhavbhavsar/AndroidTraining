@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.mad.androidtraining.cardgame.CardGameActivity
-import com.mad.androidtraining.july3ProfileIntent.ProfileIntentActivity
-import com.mad.androidtraining.july4ProfileFragment.ProfileFragmentActivity
+import com.mad.androidtraining.july3profileintent.ProfileIntentActivity
+import com.mad.androidtraining.july4profilefragment.ProfileFragmentActivity
 import com.mad.androidtraining.june14patterns.PatternsActivity
 import com.mad.androidtraining.june15recyclerview.RecyclerViewActivity
 import com.mad.androidtraining.june16spotify.SpotifyActivity

@@ -5,6 +5,7 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
@@ -22,14 +23,14 @@
         android:theme="@style/Theme.AndroidTraining"
         tools:targetApi="31">
         <activity
-            android:name=".july4ProfileFragment.ProfileFragmentActivity"
+            android:name=".july4profilefragment.ProfileFragmentActivity"
             android:exported="false" />
         <activity
-            android:name=".july3ProfileIntent.AddProfileIntentActivity"
+            android:name=".july3profileintent.AddProfileIntentActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".july3ProfileIntent.ProfileIntentActivity"
+            android:name=".july3profileintent.ProfileIntentActivity"
             android:exported="false" />
         <activity
             android:name=".june30Profile.AddProfileActivity"

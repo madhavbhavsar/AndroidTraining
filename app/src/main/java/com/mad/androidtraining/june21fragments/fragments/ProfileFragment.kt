@@ -28,8 +28,8 @@ class ProfileFragment:Fragment(),ChangeViewPagerInterface {
 
 
 
-//            val fragmentSecondActivity = requireActivity() as FragmentSecondActivity
-//            fragmentSecondActivity.viewPager.currentItem = 2
+            val fragmentSecondActivity = requireActivity() as FragmentSecondActivity
+            fragmentSecondActivity.viewPager.currentItem = 2
         }
 
         return view

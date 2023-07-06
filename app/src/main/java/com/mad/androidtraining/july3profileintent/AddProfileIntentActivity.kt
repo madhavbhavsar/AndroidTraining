@@ -1,4 +1,4 @@
-package com.mad.androidtraining.july3ProfileIntent
+package com.mad.androidtraining.july3profileintent
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.mad.androidtraining.databinding.ActivityAddProfileIntentBinding
-import com.mad.androidtraining.july3ProfileIntent.model.ProfileIntentModel
+import com.mad.androidtraining.july3profileintent.model.ProfileIntentModel
 import java.util.*
 import java.util.regex.Pattern
 

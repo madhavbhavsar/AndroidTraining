@@ -1,4 +1,4 @@
-package com.mad.androidtraining.july4ProfileFragment.adapter
+package com.mad.androidtraining.july4profilefragment.adapter
 
 import android.content.Context
 import android.os.Bundle
@@ -9,9 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.mad.androidtraining.R
-import com.mad.androidtraining.july4ProfileFragment.ProfileFragmentActivity
-import com.mad.androidtraining.july4ProfileFragment.fragments.AddProfileFragment
-import com.mad.androidtraining.july4ProfileFragment.model.ProfileFragmentModel
+import com.mad.androidtraining.july4profilefragment.ProfileFragmentActivity
+import com.mad.androidtraining.july4profilefragment.fragments.AddProfileFragment
+import com.mad.androidtraining.july4profilefragment.model.ProfileFragmentModel
 
 
 class ProfileFragmentAdapter(val context: Context, val data: ArrayList<ProfileFragmentModel>) :
@@ -45,13 +45,15 @@ class ProfileFragmentAdapter(val context: Context, val data: ArrayList<ProfileFr
         holder.btnEdit.setOnClickListener {
 
             val bundle = Bundle()
-            bundle.putString("message", "From Activity")
+            bundle.putString("update", "update")
+            bundle.putString("name", model.name)
 
             val addProfileFragment = AddProfileFragment()
             addProfileFragment.setArguments(bundle)
 
 
             val fragmentProfileActivity = context as ProfileFragmentActivity
+            fragmentProfileActivity.saveData(1,bundle)
             fragmentProfileActivity.profileFragmentBinding.vpProfiles.currentItem = 1
 
         }

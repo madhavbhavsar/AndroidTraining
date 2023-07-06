@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
                 R.id.fragmentContainerView,
                 Fragment2()
             )
+
             transaction.addToBackStack(null)
             transaction.commit()
 

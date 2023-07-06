@@ -1,9 +1,7 @@
-package com.mad.androidtraining.july3ProfileIntent.adapter
+package com.mad.androidtraining.july3profileintent.adapter
 
 import android.app.DatePickerDialog
 import android.content.Context
-import android.content.SharedPreferences
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,10 +15,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputLayout
-import com.google.gson.Gson
 import com.mad.androidtraining.R
-import com.mad.androidtraining.july3ProfileIntent.ProfileIntentActivity
-import com.mad.androidtraining.july3ProfileIntent.model.ProfileIntentModel
+import com.mad.androidtraining.july3profileintent.ProfileIntentActivity
+import com.mad.androidtraining.july3profileintent.model.ProfileIntentModel
 import java.util.*
 import java.util.regex.Pattern
 import kotlin.collections.ArrayList

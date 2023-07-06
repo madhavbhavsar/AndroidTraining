@@ -1,4 +1,4 @@
-package com.mad.androidtraining.july3ProfileIntent
+package com.mad.androidtraining.july3profileintent
 
 import android.content.Context
 import android.content.Intent
@@ -12,8 +12,8 @@ import com.bumptech.glide.Glide
 import com.google.android.material.appbar.AppBarLayout
 import com.mad.androidtraining.R
 import com.mad.androidtraining.databinding.ActivityProfileIntentBinding
-import com.mad.androidtraining.july3ProfileIntent.adapter.ProfileIntentAdapter
-import com.mad.androidtraining.july3ProfileIntent.model.ProfileIntentModel
+import com.mad.androidtraining.july3profileintent.adapter.ProfileIntentAdapter
+import com.mad.androidtraining.july3profileintent.model.ProfileIntentModel
 
 
 class ProfileIntentActivity : AppCompatActivity() {

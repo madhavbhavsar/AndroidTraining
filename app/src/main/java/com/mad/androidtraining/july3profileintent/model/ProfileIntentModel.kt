@@ -1,4 +1,4 @@
-package com.mad.androidtraining.july3ProfileIntent.model
+package com.mad.androidtraining.july3profileintent.model
 
 data class ProfileIntentModel(
     val id: String?,
