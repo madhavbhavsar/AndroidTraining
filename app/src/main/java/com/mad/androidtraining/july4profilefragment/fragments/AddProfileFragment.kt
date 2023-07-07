@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -20,7 +22,10 @@ import java.util.regex.Pattern
 class AddProfileFragment : Fragment() {
 
     private lateinit var addProfileFragment:FragmentAddProfileBinding
-    private lateinit var profile:ProfileFragmentModel
+    private lateinit var profile: ProfileFragmentModel
+    private var bundle:Bundle? = null
+    private var position:Int =-1
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -144,6 +149,7 @@ class AddProfileFragment : Fragment() {
         args.putString("dob", addProfileFragment.edtDob.text.toString().trim())
         args.putString("gender", getGender())
         args.putString("hobbies", getHobbies())
+        args.putInt("update",position)
 
         profileListFragment.arguments = args
 
@@ -152,6 +158,9 @@ class AddProfileFragment : Fragment() {
         val activity = requireActivity() as ProfileFragmentActivity
         activity.saveData(0,args)
         activity.profileFragmentBinding.vpProfiles.currentItem=0
+
+        //addProfileFragment.btnSubmit.text = "Submit"
+        position =-1
 
 
 //        val intent: Intent =
@@ -181,11 +190,72 @@ class AddProfileFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        var bundle = Bundle()
-        val activity = requireActivity() as ProfileFragmentActivity
-       // bundle = activity.getSavedDataBundle()!!
 
-        addProfileFragment.edtName.setText(bundle.getString("update") + " "+bundle.getString("name"))
+        clearAll()
+        position=-1
+
+        val activity = requireActivity() as ProfileFragmentActivity
+        if(position!=-1){
+            addProfileFragment.btnSubmit.text = "Update"
+        } else {
+            addProfileFragment.btnSubmit.text = "Submit"
+        }
+        if(activity.getSavedDataBundle()!=null){
+            bundle = activity.getSavedDataBundle()!!
+            addProfileFragment.edtName.setText(bundle!!.getString("name"))
+            addProfileFragment.edtEmail.setText(bundle!!.getString("email"))
+            addProfileFragment.edtMobile.setText(bundle!!.getString("mobile"))
+            addProfileFragment.edtPassword.setText(bundle!!.getString("password"))
+            addProfileFragment.edtConfPassword.setText(bundle!!.getString("confpassword"))
+            addProfileFragment.edtDob.setText(bundle!!.getString("dob"))
+
+            val gender: String? = bundle!!.getString("gender")
+            val hobbies: String? = bundle!!.getString("hobbies")
+            if (gender != null) {
+                setGender(addProfileFragment.rbMale,addProfileFragment.rbFemale,gender)
+            }
+            if (hobbies != null) {
+                setHobbies(addProfileFragment.cbSports,addProfileFragment.cbMusic,addProfileFragment.cbArt,hobbies)
+            }
+
+            position = bundle!!.getInt("update",-1)
+
+            if(position!=-1){
+                addProfileFragment.btnSubmit.text = "Update"
+            } else {
+                addProfileFragment.btnSubmit.text = "Submit"
+            }
+
+
+        }
+
+
+    }
+    private fun setHobbies(cbSports: CheckBox?, cbMusic: CheckBox?, cbArt: CheckBox?, hobbies: String) {
+
+        for(i in hobbies.toCharArray()){
+            if(i=='S'){
+                cbSports?.isChecked = true
+            }
+            if(i=='M'){
+                cbMusic?.isChecked = true
+            }
+            if(i=='A'){
+                cbArt?.isChecked = true
+            }
+        }
+
+
+    }
+
+    private fun setGender(btnMale: RadioButton?, btnFemale: RadioButton?, gender: String) {
+        if(gender=="M"){
+            btnMale?.isChecked = true
+        }
+        if(gender=="F"){
+            btnFemale?.isChecked = true
+        }
+
 
     }
 

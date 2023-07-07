@@ -167,6 +167,9 @@ class ProfileListFragment : Fragment() {
         setRecyclerView(dataArrayList)
     }
 
+    fun updateData() {
+        onResume()
+    }
 
 }
 
@@ -196,9 +199,7 @@ class ProfileListFragment : Fragment() {
 //
 //    }
 
-//    fun updateData() {
-//        onResume()
-//    }
+
 
 
 //    override fun sendData(profile: ProfileFragmentModel) {

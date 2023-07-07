@@ -17,6 +17,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.mad.androidtraining.R
 import com.mad.androidtraining.databinding.ActivityProfileFragmentBinding
 import com.mad.androidtraining.july4profilefragment.adapter.ProfileViewPagerAdapter
+import com.mad.androidtraining.july4profilefragment.fragments.ProfileListFragment
 import com.mad.androidtraining.july4profilefragment.model.ProfileFragmentModel
 
 
@@ -153,7 +154,7 @@ class ProfileFragmentActivity : AppCompatActivity() {
     }
 
     fun getSavedData(): ArrayList<ProfileFragmentModel> {
-        if (dataaa?.getString("name") != null && dataaa?.getString("update") == null) {
+        if (dataaa?.getString("name") != null) {
             val profile = ProfileFragmentModel(
                 dataaa?.getString("name")!!,
                 dataaa?.getString("email")!!,
@@ -165,11 +166,30 @@ class ProfileFragmentActivity : AppCompatActivity() {
                 dataaa?.getString("hobbies")!!
             )
 
-            list.add(profile)
+            if(dataaa?.getInt("update")==null || dataaa?.getInt("update")==-1 ){
+                list.add(profile)
+            } else {
+                list[dataaa?.getInt("update")!!] = profile
+            }
+
+
             dataaa=null
         }
 
         return list
+    }
+
+    fun deleteData(position: Int) {
+        list.removeAt(position)
+        val pagerAdapter = ProfileViewPagerAdapter(this, listOfTitles)
+        profileFragmentBinding.vpProfiles.adapter = pagerAdapter
+
+        TabLayoutMediator(
+            profileFragmentBinding.tlProfileTabsList,
+            profileFragmentBinding.vpProfiles
+        ) { tab: TabLayout.Tab, position: Int ->
+            tab.text = listOfTitles[position]
+        }.attach()
     }
 
     private val changeImage =
